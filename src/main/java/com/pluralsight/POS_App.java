@@ -26,6 +26,22 @@ public class POS_App {
             System.out.println("Invalid size selection. Defaulted to Regular ($5.45).");
             basePrice = 5.45;
         }
+//        Prompt the user if they would like the sandwich "loaded" (yes/no)
+//        a. Regular: additional $1.00
+//        b. Large: additional $1.75
+        System.out.print("Would you like thy sandwich to be loaded? (Yes/No): ");
+        String loaded = keyboard.next();
+
+        double loadedCost = 0.0;
+
+        if (loaded.equalsIgnoreCase("Yes")) {
+            if (size == 1) {
+                loadedCost = 1.00;
+            } else if (size == 2) {
+                loadedCost = 1.75;
+            }
+        }
+
 //        Prompt the user for their age:
 //        a. Student (17 years old or younger) – receive a 10% discount
 //        b. Seniors (65 years old or older) – receive a 20% discount
@@ -43,10 +59,15 @@ public class POS_App {
         }
 
 //        Display the cost of the sandwich to the screen
-        double finalPrice = basePrice - (basePrice * discount);
+
+        double totalBeforeDiscount = basePrice + loadedCost;
+        double finalPrice = totalBeforeDiscount - (totalBeforeDiscount * discount);
 
         System.out.println("\n\t-Your Order-");
         System.out.println("Base Price: $" + basePrice);
+        if (loadedCost > 0) {
+            System.out.printf("Loaded Cost: $%.2f%n", loadedCost);
+        }
         if (!discountMessage.isEmpty()) {
             System.out.println(discountMessage);
         }
