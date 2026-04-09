@@ -23,7 +23,7 @@ public class POS_App {
         } else if (size == 2) {
             basePrice = 8.95;
         } else {
-            System.out.println("Invalid size selection. Defaulted to Regular ($5.25).");
+            System.out.println("Invalid size selection. Defaulted to Regular ($5.45).");
             basePrice = 5.45;
         }
 //        Prompt the user for their age:
