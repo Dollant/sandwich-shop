@@ -29,9 +29,21 @@ public class POS_App {
 //        Prompt the user for their age:
 //        a. Student (17 years old or younger) – receive a 10% discount
 //        b. Seniors (65 years old or older) – receive a 20% discount
+        System.out.print("Enter your age: ");
+        int age = keyboard.nextInt();
 
+        double discount = 0.0;
+        String discountMessage = ("");
+        if (age <= 17) {
+            discount = 0.10;
+            discountMessage = "Student discount applied: (10%)";
+        } else if (age >= 65) {
+            discount = 0.20;
+            discountMessage = "Senior discount applied: (20%)";
+        }
 
 //        Display the cost of the sandwich to the screen
+
 
 
     }
