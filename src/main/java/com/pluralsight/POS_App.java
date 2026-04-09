@@ -43,8 +43,15 @@ public class POS_App {
         }
 
 //        Display the cost of the sandwich to the screen
+        double finalPrice = basePrice - (basePrice * discount);
 
+        System.out.println("\n\t-Your Order-");
+        System.out.println("Base Price: $" + basePrice);
+        if (!discountMessage.isEmpty()) {
+            System.out.println(discountMessage);
+        }
+        System.out.printf("Total cost: $%.2f%n", finalPrice);
 
-
+        keyboard.close();
     }
 }
